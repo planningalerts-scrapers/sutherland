@@ -1,6 +1,18 @@
 require 'scraperwiki'
 require 'mechanize'
 
+case ENV['MORPH_PERIOD']
+when 'thismonth'
+  period = 'TM'
+when 'lastmonth'
+  period = 'LM'
+else
+  period = 'TW'
+end
+puts "Getting '" + period + "' data, changable via MORPH_PERIOD environment";
+
+url = "https://ecerts.ssc.nsw.gov.au/eproperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=" + period + "&Group=DA&SearchFunction=SSC.P1.ETR.SEARCH.DA&r=SSC.P1.WEBGUEST&f=SSC.ETR.SRCH.STW.DA&ResultsFunction=SSC.P1.ETR.RESULT.DA"
+
 url = "https://feeds.ssc.nsw.gov.au/?page=PlanningAlerts"
 comment_url = "mailto:ssc@ssc.nsw.gov.au"
 
