@@ -3,7 +3,7 @@
 This site is a typical .NET site involves the followings.
 
 * Cookie - No
-* Pagnation - Limited support to 10 pages
+* Pagnation - Yes
 * Javascript - Yes
 * Structured HTML - Good
 
