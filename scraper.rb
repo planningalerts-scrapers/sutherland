@@ -2,12 +2,12 @@ require 'scraperwiki'
 require 'mechanize'
 
 case ENV['MORPH_PERIOD']
-when 'thismonth'
-  period = 'TM'
 when 'lastmonth'
   period = 'LM'
-else
+when 'thisweek'
   period = 'TW'
+else
+  period = 'TM'
 end
 puts "Getting '" + period + "' data, changable via MORPH_PERIOD environment"
 
